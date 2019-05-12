@@ -4,6 +4,8 @@
 
   <link name="robot_footprint"></link>
 
+  <!-- CHASSIS -->
+
   <joint name="robot_footprint_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="robot_footprint"/>
@@ -37,7 +39,6 @@
       </geometry>
     </visual>
 
-
     <collision name='back_caster_collision'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -67,6 +68,12 @@
     </visual>
 
   </link>
+
+  <gazebo reference="chassis">
+      <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- LEFT WHEEL -->
 
   <joint type="continuous" name="left_wheel_hinge">
     <origin xyz="0 0.15 0" rpy="0 0 0"/>
@@ -105,6 +112,12 @@
 
   </link>
 
+  <gazebo reference="left_wheel">
+      <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- RIGHT WHEEL -->
+
   <joint type="continuous" name="right_wheel_hinge">
     <origin xyz="0 -0.15 0" rpy="0 0 0"/>
     <child link="right_wheel"/>
@@ -142,7 +155,13 @@
 
   </link>
 
-  <joint type="fixed" name="camera">
+  <gazebo reference="right_wheel">
+      <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- CAMERA -->
+
+  <joint type="fixed" name="camera_joint">
     <origin xyz="0.2 0 0" rpy="0 0 0"/>
     <child link="camera"/>
     <parent link="chassis"/>
@@ -162,14 +181,14 @@
       <box_inertia m="0.1" x="0.05" y="0.05" z="0.05"/>
     </inertial>
 
-    <collision name='camera'>
+    <collision name='camera_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
 
-    <visual name='camera'>
+    <visual name='camera_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
         <box size="0.05 0.05 0.05"/>
@@ -178,6 +197,47 @@
 
   </link>
 
+  <gazebo reference="camera">
+      <material>Gazebo/Red</material>
+  </gazebo>
+
+  <!-- HOKUYO LIDAR -->
+
+  <joint type="fixed" name="hukoyo_joint">
+    <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+    <child link="hokuyo"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name='hokuyo'>
+
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <collision name='hokuyo_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+      <geometry>
+        <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
+
+      </geometry>
+    </visual>
+
+  </link>
 
 </robot>
 
