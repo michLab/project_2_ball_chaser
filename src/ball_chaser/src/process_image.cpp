@@ -61,8 +61,8 @@ void process_image_callback(const sensor_msgs::Image img)
 	}
 	
 	// If robot found white ball than determine if it is in the left, right or center of the image:
-	float forward_vel = 0.1;				// Robot forward speed
-	float angular_vel = 0.2;				// Robot angular speed
+	float forward_vel = 0.4;				// Robot forward speed
+	float angular_vel = 0.4;				// Robot angular speed
 	int left_region_end = img.width/3;			// A column at which left region of the image ends
 	int right_region_start = img.width - img.width/3; 	// A column at which right region of the image starts
 
@@ -71,7 +71,7 @@ void process_image_callback(const sensor_msgs::Image img)
 		// Find a center of white blob:
 		int white_blob_row_center = 0.5 * (white_blob_row_max + white_blob_row_min);	// Center row is an arithmetic mean of min and max rows of blob
 		int white_blob_col_center = 0.5 * (white_blob_col_max + white_blob_col_min);	// Center col is an arithmetic mean of min and max cols of blob
-		ROS_INFO("Found white blob: row = %d, col = %d", white_blob_row_center, white_blob_col_center);
+		//ROS_INFO("Found white blob: row = %d, col = %d", white_blob_row_center, white_blob_col_center);
 		//ROS_INFO("white_blob_row_min = %d, white_blob_row_max = %d", white_blob_row_min, white_blob_row_max);
 
 		// If white blob fills image from top to bottom then stop the motors:
@@ -95,7 +95,7 @@ void process_image_callback(const sensor_msgs::Image img)
 		}
 	} 
 	else {
-		ROS_INFO("Didn't found white blob");
+		//ROS_INFO("Didn't found white blob");
 		// The robot doesn't see a white ball, thus stop:
 		drive_robot(0, 0);
 	}
