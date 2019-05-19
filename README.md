@@ -1,6 +1,6 @@
 # A ball chaser
 
-This is a simple differential-drive robot haued in single floor building simulated in Gazebo.
+This is a simple differential-drive robot haused in single floor building simulated in Gazebo.
 The robot is controlled by ROS. The robot is equipped with camera and Hokuyo laser scaner. 
 
 ## Nodes
