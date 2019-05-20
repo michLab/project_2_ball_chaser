@@ -3,7 +3,7 @@
 This is a simple differential-drive robot haused in single floor building simulated in Gazebo.
 The robot is controlled by ROS. The robot is equipped with camera and Hokuyo laser scaner. 
 
-## Chow to use
+## How to use
 
 In order to run this package follow this steps:
 * Make direcotry for catkin workspace:
