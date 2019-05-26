@@ -43,9 +43,14 @@ roslaunch ball_chaser ball_chaser.launch
 
 ## Nodes
 Two nodes are essential for **white** ball chasing:
-* process image - which subsribes images form camera and finds a **white** blob on it. This node also calls drive_bot service to steer robot
-* drive_bot - it is a service to drive robot (it could move froward, backward or turn around its veritcal axis)
+* `process_image` - which subsribes images form camera and finds a **white** blob on it. This node also calls drive_bot service to steer robot
+* `drive_bot` - it is a service to drive robot (it could move froward, backward or turn around its veritcal axis)
 
+## Robot
+
+Robot is described in my_robot.urdf file. It is a two-wheeled round-shaped 
+vehicle with two caster balls. It is equipped with a monocular camera and
+ Hokuyo laser scaner.
 
 ## License
 The contents of this repository are covered under the [MIT License](./LICENSE.txt)
