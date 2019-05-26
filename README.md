@@ -52,6 +52,11 @@ Robot is described in my_robot.urdf file. It is a two-wheeled round-shaped
 vehicle with two caster balls. It is equipped with a monocular camera and
  Hokuyo laser scaner.
 
+<p align="center">
+  <img width="460" height="300" src="images/robot.png">
+  <br>A robot portrait
+</p>
+
 ## License
 The contents of this repository are covered under the [MIT License](./LICENSE.txt)
 
