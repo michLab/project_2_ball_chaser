@@ -3,7 +3,10 @@
 This is a simple differential-drive robot haused in single floor building simulated in Gazebo.
 The robot is controlled by ROS. The robot is equipped with camera and Hokuyo laser scaner. 
 
-![](images/ball_chaser.gif)
+<p align="center">
+  <img width="460" height="300" src="images/ball_chaser.gif">
+</p>
+
 
 ## How to use
 
