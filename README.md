@@ -5,6 +5,7 @@ The robot is controlled by ROS. The robot is equipped with camera and Hokuyo las
 
 <p align="center">
   <img width="460" height="300" src="images/ball_chaser.gif">
+  <br>Robot chasing white ball
 </p>
 
 
