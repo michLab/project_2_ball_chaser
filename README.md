@@ -46,6 +46,15 @@ Two nodes are essential for **white** ball chasing:
 * process image - which subsribes images form camera and finds a **white** blob on it. This node also calls drive_bot service to steer robot
 * drive_bot - it is a service to drive robot (it could move froward, backward or turn around its veritcal axis)
 
+
 ## License
 The contents of this repository are covered under the [MIT License](./LICENSE.txt)
 
+
+## Contributing
+
+1. Fork it (<https://github.com/michLab/project_2_ball_chaser.git>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
